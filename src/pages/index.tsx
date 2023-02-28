@@ -1,11 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import styled from "styled-components";
 
 const Title = styled.h1`
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fontSize["xl"]};
   font-weight: 600;
+  color: ${({ theme }) => theme.colors.teal};
 `;
 
 export default function Home() {
@@ -18,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Title>New app</Title>
+        <Title>This is test for</Title>
       </main>
     </>
   );
