@@ -38,6 +38,7 @@ export const theme = {
     "dark-blue": "#14597A",
     white: "#FFFFFF",
     black: "#2f2f2f",
+    gray1: "#333333",
   },
   fontSize: {
     xs: "12px",

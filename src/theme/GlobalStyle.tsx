@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -10,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
 html {
   background: linear-gradient(138.11deg, #FEF452 0%, #942F70 121.92%);;
   background-repeat: no-repeat;
-  min-height: 100vh
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
 html,
