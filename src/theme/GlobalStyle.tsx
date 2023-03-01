@@ -1,7 +1,16 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  background: linear-gradient(138.11deg, #FEF452 0%, #942F70 121.92%);;
+  background-repeat: no-repeat;
+  min-height: 100vh
 }
 
 html,
@@ -24,3 +33,7 @@ a {
     color-scheme: dark;
   }
 }
+
+`;
+
+export default GlobalStyle;

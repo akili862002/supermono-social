@@ -24,7 +24,11 @@ const spacing = {
   24: "96px",
   28: "112px",
   32: "128px",
-};
+} as const;
+
+const breakpoints = {
+  desktop: "1280px",
+} as const;
 
 export const theme = {
   colors: {
@@ -32,6 +36,8 @@ export const theme = {
     yellow: "#FEF452",
     purple: "#942F70",
     "dark-blue": "#14597A",
+    white: "#FFFFFF",
+    black: "#2f2f2f",
   },
   fontSize: {
     xs: "12px",
@@ -40,7 +46,7 @@ export const theme = {
     lg: "18px",
     xl: "20px",
     "2xl": "24px",
-    "3xl": "30px",
+    "3xl": "28px",
     "4xl": "36px",
     "5xl": "48px",
     "6xl": "60px",
@@ -60,6 +66,7 @@ export const theme = {
     black: "900",
   },
   spacing,
+  breakpoints,
 } as const;
 
 export type ITheme = typeof theme;

@@ -1,0 +1,58 @@
+{
+  "Add tsx": {
+    "prefix": "!tsx",
+    "body": [
+      "import * as Styled from \"./${1:Component}.styles\";",
+      "",
+      "interface I${1:Component}Props {  }",
+      "",
+      "const ${1:Component}: React.FC<I${1:Component}Props> = (props) => {",
+      "",
+      "  return (",
+      "    <Styled.${1:Component}Container>",
+      "            ",
+      "    </Styled.${1:Component}Container>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:Component};"
+    ]
+  },
+  "Create Styled Component": {
+    "prefix": "!style",
+    "body": [
+      "import styled, { css } from 'styled-components';",
+      "",
+      "export const ${1:Container}Container = styled.${2:div}`",
+      "",
+      "`;",
+      ""
+    ],
+    "description": "Create Styled Component"
+  },
+  "Add Styled Component": {
+    "prefix": "!astyled",
+    "body": [
+      "",
+      "export const ${1:Component} = styled.${2:div}(({ theme: {} }) => css`",
+      "  ${3}",
+      "`);",
+      ""
+    ],
+    "description": "Create Styled Component"
+  },
+  "Add icon": {
+    "prefix": [
+      "~icon",
+      "!icon",
+      "~aicon",
+      "!aicon"
+    ],
+    "body": [
+      "export const ${1:Component}Icon: React.FC<IIconSVGProps> = props => (",
+      "  ${2}",
+      ")"
+    ],
+    "description": "Add icon"
+  },
+}
