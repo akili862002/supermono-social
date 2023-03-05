@@ -43,7 +43,7 @@ yarn dev
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Usage
+## Usage
 
 To use the Supermonos application, follow these steps:
 
@@ -52,7 +52,7 @@ Click on the "Create Social" button to create the event
 
 View the event on the Post page
 
-# License
+## License
 
 Supermonos is licensed under the MIT License. See the LICENSE file for more information.
 
