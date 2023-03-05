@@ -11,4 +11,6 @@ Wrapper.Container = (props: PropsWithChildren) => {
   return <Styled.Container>{props.children}</Styled.Container>;
 };
 
+Wrapper.displayName = "Wrapper";
+
 export default Wrapper;
