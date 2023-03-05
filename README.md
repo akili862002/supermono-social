@@ -32,7 +32,7 @@ To get started, follow these steps:
 2. Install the dependencies using the following command:
 
 ```
-yarn add
+yarn install
 ```
 
 3. Run the development server using the following command:
