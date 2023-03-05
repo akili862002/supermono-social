@@ -1,4 +1,4 @@
-import Home from "@/containers/Home/Home";
+import Post from "@/containers/Post/Post";
 import Head from "next/head";
 
 const HomePage: React.FC = () => {
@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Home />
+      <Post />
     </>
   );
 };

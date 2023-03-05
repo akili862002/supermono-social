@@ -1,9 +1,7 @@
 import SocialLayout from "@/layouts/SocialLayout/SocialLayout";
 import { Privacy, Social } from "@/types/Social";
 import dayjs from "dayjs";
-import * as Styled from "./Home.styles";
-
-interface IHomeProps {}
+import * as Styled from "./PostDetail.styles";
 
 const data: Social = {
   title:
@@ -21,7 +19,7 @@ const data: Social = {
   tags: ["Product", "Design"],
 };
 
-const Home: React.FC<IHomeProps> = (props) => {
+const PostDetail: React.FC = (props) => {
   const date = dayjs(data.startAt).format("MMMM DD, ddd");
   const time = dayjs(data.startAt).format("H A");
 
@@ -42,4 +40,4 @@ const Home: React.FC<IHomeProps> = (props) => {
   );
 };
 
-export default Home;
+export default PostDetail;

@@ -29,6 +29,8 @@ const spacing = {
 
 const breakpoints = {
   desktop: "1280px",
+  laptop: "1024px",
+  phone: "640px",
 } as const;
 
 export const theme = {

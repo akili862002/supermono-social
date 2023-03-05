@@ -1,3 +1,4 @@
+import BannerPicker from "@/components/BannerPicker/BannerPicker";
 import Checkbox from "@/components/Checkbox/Checkbox";
 import { FormikForm } from "@/components/FormikForm";
 import { BaseRadioGroup } from "@/components/RadioGroup/RadioGroup";
@@ -7,14 +8,21 @@ import TextField from "@/components/TextField/TextField";
 import TitleInput from "@/components/TitleInput/TitleInput";
 import SocialLayout from "@/layouts/SocialLayout/SocialLayout";
 import { Privacy, Social } from "@/types/Social";
+import axios from "axios";
 import { GetStaticProps } from "next";
 import { useState } from "react";
-import { tagOptions } from "./Post.consts";
+import { useMutation } from "react-query";
+import { banners, tagOptions } from "./Post.consts";
+import { ImageIcon } from "./Post.icons";
 import * as Styled from "./Post.styles";
 
 interface IPostProps {}
 
 const Post: React.FC<IPostProps> = (props) => {
+  const mutation = useMutation((values: Social) => {
+    return axios.post("/interview/social", values);
+  });
+
   const [initValue] = useState<Social>({
     title: "Untitle Event",
     banner: undefined as string,
@@ -28,7 +36,10 @@ const Post: React.FC<IPostProps> = (props) => {
     venue: undefined,
   });
 
-  const handleSubmit = async (values: typeof initValue) => {};
+  const handleSubmit = async (values: typeof initValue) => {
+    console.log({ values });
+    mutation.mutate(values);
+  };
 
   return (
     <Styled.PostContainer>
@@ -56,18 +67,16 @@ const Post: React.FC<IPostProps> = (props) => {
               />
             }
             banner={
-              <div
-                style={{
-                  background: "rgba(242, 242, 242, 0.1);",
-                  width: "100%",
-                  height: "300px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              <BannerPicker
+                {...fieldProps.banner}
+                title="Choose a banner"
+                images={banners}
               >
-                Upload
-              </div>
+                <Styled.BannerPicker type="button">
+                  <ImageIcon />
+                  <span>Add a banner</span>
+                </Styled.BannerPicker>
+              </BannerPicker>
             }
             settings={
               <Styled.SettingContainer>
@@ -102,7 +111,13 @@ const Post: React.FC<IPostProps> = (props) => {
               </Styled.SettingContainer>
             }
             settingsButton={
-              <Styled.Button type="submit">CREATE SOCIAL</Styled.Button>
+              <Styled.Button
+                size="lg"
+                loading={mutation.isLoading}
+                type="submit"
+              >
+                CREATE SOCIAL
+              </Styled.Button>
             }
           />
         )}

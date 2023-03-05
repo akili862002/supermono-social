@@ -1,7 +1,7 @@
-import Post from "@/containers/Post/Post";
+import PostDetail from "@/containers/PostDetail/PostDetail";
 import Head from "next/head";
 
-const PostPage: React.FC = () => {
+const PostDetailPage: React.FC = () => {
   return (
     <>
       <Head>
@@ -10,9 +10,9 @@ const PostPage: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Post />
+      <PostDetail />
     </>
   );
 };
 
-export default PostPage;
+export default PostDetailPage;
