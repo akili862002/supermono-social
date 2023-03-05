@@ -9,6 +9,7 @@ import {
 import * as Styled from "./SocialLayout.styles";
 
 interface ISocialLayoutProps {
+  isPost: boolean;
   title: ReactNode;
   date: ReactNode;
   time: ReactNode;
@@ -17,10 +18,12 @@ interface ISocialLayoutProps {
   price: ReactNode;
   description: ReactNode;
   settings?: ReactNode;
+  settingsButton?: ReactNode;
   banner: ReactNode;
 }
 
 const SocialLayout: React.FC<ISocialLayoutProps> = ({
+  isPost,
   title,
   date,
   time,
@@ -29,6 +32,7 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
   price,
   description,
   settings = null,
+  settingsButton = null,
   banner,
 }) => {
   return (
@@ -53,7 +57,11 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
               <LocationIcon />
               <span>{venue}</span>
             </Styled.Field>
-            <Styled.FieldsRow>
+            <Styled.FieldsRow
+              style={{
+                marginTop: isPost ? "12px" : "0px",
+              }}
+            >
               <Styled.Field size="md">
                 <CapacityIcon />
                 <span>{capacity}</span>
@@ -65,10 +73,23 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
             </Styled.FieldsRow>
           </Styled.NoneTimeContainer>
         </Styled.FieldsContainer>
-        <Styled.Description>{description}</Styled.Description>
-        {settings}
+        <Styled.Description as={isPost ? "div" : "p"}>
+          {description}
+        </Styled.Description>
+        {settings && (
+          <>
+            <Styled.Settings.Container>
+              <Styled.Settings.Title>Settings</Styled.Settings.Title>
+              {settings}
+            </Styled.Settings.Container>
+            {settingsButton}
+          </>
+        )}
       </Styled.FormSection>
-      <Styled.BannerSection>{banner}</Styled.BannerSection>
+      <Styled.BannerSection.Container>
+        <Styled.BannerSection.Content>{banner}</Styled.BannerSection.Content>
+        {/* {banner} */}
+      </Styled.BannerSection.Container>
     </Styled.SocialLayoutContainer>
   );
 };

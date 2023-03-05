@@ -13,15 +13,24 @@ export const FormSection = styled.div(
   `
 );
 
-export const BannerSection = styled.div`
-  position: absolute;
-  width: 58.33333333%;
-  right: 0;
-  top: 0;
-  border-radius: 0px 64px;
-  overflow: hidden;
-  z-index: 1;
-`;
+export const BannerSection = {
+  Container: styled.div`
+    --width: 58.33333333%;
+
+    position: absolute;
+    width: var(--width);
+    height: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding-bottom: calc(var(--width) * 445 / 740);
+  `,
+  Content: styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  `,
+};
 
 export const Title = styled.h1(
   ({ theme: { colors, spacing, fontSize, fontWeight } }) => css`
@@ -59,6 +68,11 @@ export const Field = styled.div<{ size: "lg" | "md" }>(
     align-items: center;
     gap: ${spacing["2"]};
     min-height: 40px;
+    width: 100%;
+
+    span {
+      width: 100%;
+    }
 
     ${size === "lg"
       ? css`
@@ -68,6 +82,7 @@ export const Field = styled.div<{ size: "lg" | "md" }>(
           font-size: ${fontSize.base};
         `}
     & > svg {
+      flex-shrink: 0;
       ${size === "lg"
         ? css`
             width: 48px;
@@ -98,3 +113,28 @@ export const Description = styled.p(
     line-height: 28px;
   `
 );
+
+export const Settings = {
+  Container: styled.div(
+    ({ theme: { spacing, colors, shadow } }) => css`
+      margin-top: ${spacing["8"]};
+      padding: ${spacing["8"]};
+      background: ${colors.white};
+      border-radius: 20px;
+      box-shadow: ${shadow.md}; ;
+    `
+  ),
+  Title: styled.h2(
+    ({ theme: { colors, fontWeight, fontSize, spacing } }) => css`
+      font-style: normal;
+      font-weight: ${fontWeight.bold};
+      font-size: ${fontSize["4xl"]};
+      line-height: 32px;
+      color: ${colors.purple};
+      margin-bottom: ${spacing["8"]};
+      background: ${colors.yellow};
+      padding: ${spacing["3"]};
+      width: fit-content;
+    `
+  ),
+};

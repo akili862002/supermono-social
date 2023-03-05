@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from "react";
 import * as yup from "yup";
-import { cn } from "../../utils/classnames.utils";
 
 export type IYupSchemaCallback<T> = (_yup: typeof yup) => {
   [key in keyof T]?: yup.SchemaOf<
@@ -90,7 +89,7 @@ const FormikFormInner = <T,>(
       onSubmit={onSubmit}
     >
       {(props) => (
-        <Form id={formId} className={cn("space-y-1", className)}>
+        <Form id={formId}>
           {children?.({
             ...props,
             fieldProps: generatePropsForFields(),

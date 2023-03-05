@@ -1,3 +1,9 @@
+export enum Privacy {
+  PUBLIC = "Public",
+  CURATED_AUDIENCE = "Curated Audience",
+  COMMUNITY_ONLY = "Community Only",
+}
+
 export interface Social {
   title: string;
   startAt: string;
@@ -8,5 +14,5 @@ export interface Social {
   banner: string;
   tags: string[];
   isManualApprove: boolean;
-  privacy: string;
+  privacy: Privacy;
 }

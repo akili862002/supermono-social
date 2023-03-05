@@ -34,7 +34,7 @@
     "prefix": "!astyled",
     "body": [
       "",
-      "export const ${1:Component} = styled.${2:div}(({ theme: {} }) => css`",
+      "export const ${1:Component} = styled.${2:div}(({ theme }) => css`",
       "  ${3}",
       "`);",
       ""
