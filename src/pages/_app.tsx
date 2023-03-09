@@ -20,6 +20,14 @@ export default function App({ Component, pageProps }: AppProps) {
           locale: "en_IE",
           url: "https://supermomos.com/",
           site_name: "Supermomos",
+          images: [
+            {
+              url: "/hero-banner.png",
+              width: 800,
+              height: 600,
+              alt: "Supermomos",
+            },
+          ],
         }}
       />
       <Theme>
