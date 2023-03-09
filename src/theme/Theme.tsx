@@ -33,6 +33,26 @@ const breakpoints = {
   phone: "640px",
 } as const;
 
+type IBreakPoint = typeof breakpoints[keyof typeof breakpoints];
+
+const media = {
+  /**'
+   * @return `@media (min-${vertical ? "height" : "width"}: ${breakpoint})`,
+   */
+  up: (breakpoint: IBreakPoint, vertical = false) =>
+    `@media (min-${vertical ? "height" : "width"}: ${breakpoint})`,
+  down: (breakpoint: IBreakPoint, vertical = false) =>
+    `@media (max-${vertical ? "height" : "width"}: ${breakpoint})`,
+  between: (
+    breakpointMin: IBreakPoint,
+    breakpointMax: IBreakPoint,
+    vertical = false
+  ) =>
+    `@media (max-${vertical ? "height" : "width"}: ${breakpointMax}) and (min-${
+      vertical ? "height" : "width"
+    }: ${breakpointMin})`,
+};
+
 export const theme = {
   colors: {
     teal: "#01B2BA",
@@ -80,6 +100,7 @@ export const theme = {
   },
   spacing,
   breakpoints,
+  media,
 } as const;
 
 export type ITheme = typeof theme;

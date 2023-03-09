@@ -30,7 +30,6 @@ const TitleInput: React.FC<ITitleInputProps> = ({ name, defaultValue }) => {
     <Styled.TitleInputContainer
       onClick={() => {
         setIsEdit(true);
-        console.log("Edit");
       }}
     >
       {field.value}

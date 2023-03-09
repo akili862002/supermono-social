@@ -1,22 +1,20 @@
 import { useField } from "formik";
-import { useState } from "react";
+import FormControl from "../FormControl/FormControl";
 import * as Styled from "./TextField.styles";
 
-interface ITextFieldProps {
+interface ITextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   required: boolean;
   placeholder: string;
 }
 
 const TextField: React.FC<ITextFieldProps> = (props) => {
-  const [field, meta, helper] = useField(props.name);
+  const [field] = useField(props.name);
 
   return (
-    <Styled.Input
-      value={field.value}
-      onChange={(e) => helper.setValue(e.target.value)}
-      {...props}
-    />
+    <FormControl name={props.name} required>
+      <Styled.Input value={field.value} {...field} {...props} />
+    </FormControl>
   );
 };
 

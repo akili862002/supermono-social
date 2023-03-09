@@ -37,6 +37,10 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
 }) => {
   return (
     <Styled.SocialLayoutContainer>
+      <Styled.BannerSection.Container>
+        <Styled.BannerSection.Content>{banner}</Styled.BannerSection.Content>
+        {/* {banner} */}
+      </Styled.BannerSection.Container>
       <Styled.FormSection>
         <Styled.Title>
           <span>{title}</span>
@@ -86,10 +90,6 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
           </>
         )}
       </Styled.FormSection>
-      <Styled.BannerSection.Container>
-        <Styled.BannerSection.Content>{banner}</Styled.BannerSection.Content>
-        {/* {banner} */}
-      </Styled.BannerSection.Container>
     </Styled.SocialLayoutContainer>
   );
 };

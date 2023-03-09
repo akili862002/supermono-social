@@ -5,6 +5,7 @@ export enum Privacy {
 }
 
 export interface Social {
+  id: string;
   title: string;
   startAt: string;
   venue: string;
@@ -16,3 +17,5 @@ export interface Social {
   isManualApprove: boolean;
   privacy: Privacy;
 }
+
+export interface SocialInput extends Omit<Social, "id"> {}

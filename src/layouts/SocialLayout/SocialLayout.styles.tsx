@@ -2,19 +2,26 @@ import styled, { css } from "styled-components";
 
 export const SocialLayoutContainer = styled.div`
   position: relative;
+  margin-top: ${({ theme }) => theme.spacing["20"]};
 `;
 
 export const FormSection = styled.div(
-  ({ theme: {} }) => css`
-    padding: ${({ theme }) => theme.spacing["8"]};
+  ({ theme }) => css`
+    padding: ${theme.spacing["8"]};
     width: 55%;
     position: relative;
     z-index: 2;
+
+    ${theme.media.down("640px")} {
+      width: 100%;
+      padding: ${theme.spacing["8"]} 0;
+    }
   `
 );
 
 export const BannerSection = {
-  Container: styled.div`
+  Container: styled.div(
+    ({ theme }) => `
     --width: 58.33333333%;
 
     position: absolute;
@@ -24,7 +31,13 @@ export const BannerSection = {
     top: 0;
     z-index: 1;
     padding-bottom: calc(var(--width) * 445 / 740);
-  `,
+
+    ${theme.media.down("1024px")} {
+      --width: 100%;
+      position: relative;
+    }
+  `
+  ),
   Content: styled.div`
     position: absolute;
     width: 100%;
@@ -53,10 +66,14 @@ export const FieldsContainer = styled.div(
 );
 
 export const FieldsRow = styled.div(
-  ({ theme: { spacing } }) => css`
+  ({ theme }) => css`
     display: flex;
     align-items: center;
-    gap: ${spacing["8"]};
+    gap: ${theme.spacing["8"]};
+
+    ${theme.media.down("640px")} {
+      flex-direction: column;
+    }
   `
 );
 
