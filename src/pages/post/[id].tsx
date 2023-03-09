@@ -32,7 +32,7 @@ export default PostDetailPage;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.params;
-  const post = await axios.get<Social>(`/interview/post/${id}`);
+  const post = await axios.get<Social>(`/interview/social/${id}`);
 
   return {
     props: {
