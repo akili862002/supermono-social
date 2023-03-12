@@ -12,7 +12,7 @@ export const FormSection = styled.div(
     position: relative;
     z-index: 2;
 
-    ${theme.media.down("640px")} {
+    ${theme.media.down("1024px")} {
       width: 100%;
       padding: ${theme.spacing["8"]} 0;
     }
@@ -46,7 +46,7 @@ export const BannerSection = {
 };
 
 export const Title = styled.h1(
-  ({ theme: { colors, spacing, fontSize, fontWeight } }) => css`
+  ({ theme: { colors, fontSize, fontWeight, media } }) => css`
     font-style: normal;
     font-weight: ${fontWeight.bold};
     font-size: ${fontSize["5xl"]};
@@ -55,6 +55,10 @@ export const Title = styled.h1(
 
     & > span {
       background-color: ${colors.purple};
+    }
+    ${media.down("1024px")} {
+      font-size: ${fontSize["4xl"]};
+      line-height: 50px;
     }
   `
 );
@@ -72,7 +76,12 @@ export const FieldsRow = styled.div(
     gap: ${theme.spacing["8"]};
 
     ${theme.media.down("640px")} {
-      flex-direction: column;
+      /* flex-direction: column; */
+      gap: ${theme.spacing["2"]};
+
+      h2 {
+        font-size: ${theme.fontSize["lg"]};
+      }
     }
   `
 );
@@ -114,8 +123,12 @@ export const Field = styled.div<{ size: "lg" | "md" }>(
 );
 
 export const NoneTimeContainer = styled.div(
-  ({ theme: { spacing } }) => css`
-    margin-top: ${spacing["7"]};
+  ({ theme }) => css`
+    margin-top: ${theme.spacing["7"]};
+
+    ${theme.media.down("640px")} {
+      margin-top: ${theme.spacing["4"]};
+    }
   `
 );
 

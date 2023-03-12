@@ -31,10 +31,11 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
 }
 
 

@@ -77,7 +77,7 @@ export const theme = {
     xl: "20px",
     "2xl": "24px",
     "3xl": "28px",
-    "4xl": "32px",
+    "4xl": "40px",
     "5xl": "48px",
     "6xl": "60px",
     "7xl": "72px",

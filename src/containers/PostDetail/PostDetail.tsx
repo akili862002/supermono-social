@@ -10,7 +10,7 @@ const PostDetail: React.FC<{
   const time = dayjs(data.startAt).format("H A");
 
   return (
-    <Styled.HomeContainer>
+    <Styled.PostDetailContainer>
       <SocialLayout
         isPost={false}
         title={data.title}
@@ -22,7 +22,7 @@ const PostDetail: React.FC<{
         description={data.description}
         banner={<Styled.BannerImage src={data.banner} alt={data.title} />}
       />
-    </Styled.HomeContainer>
+    </Styled.PostDetailContainer>
   );
 };
 

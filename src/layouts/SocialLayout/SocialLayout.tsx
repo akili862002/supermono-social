@@ -39,7 +39,6 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
     <Styled.SocialLayoutContainer>
       <Styled.BannerSection.Container>
         <Styled.BannerSection.Content>{banner}</Styled.BannerSection.Content>
-        {/* {banner} */}
       </Styled.BannerSection.Container>
       <Styled.FormSection>
         <Styled.Title>
@@ -47,11 +46,11 @@ const SocialLayout: React.FC<ISocialLayoutProps> = ({
         </Styled.Title>
         <Styled.FieldsContainer>
           <Styled.FieldsRow>
-            <Styled.Field size="lg">
+            <Styled.Field as="h2" size="lg">
               <DateIcon />
               <span>{date}</span>
             </Styled.Field>
-            <Styled.Field size="lg">
+            <Styled.Field as="h2" size="lg">
               <TimeIcon />
               <span>{time}</span>
             </Styled.Field>
